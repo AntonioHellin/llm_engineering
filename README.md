@@ -1,106 +1,118 @@
-# Ingeniería de LLM  - Domina el mundo de la IA y los LLMs
+# 🧠 LLM Engineering Starter (`llm-engineering-starter`)
 
-## Tu viaje de 8 semanas hacia el dominio completo de estos temas comienza hoy
+A comprehensive, 8-week hands-on engineering repository covering the practical implementation of Large Language Models (LLMs), Prompt Engineering, Retrieval-Augmented Generation (RAG), Fine-Tuning, and Autonomous Multi-Agent Systems.
 
-![Voyage](voyage.jpg)
+---
 
+## Project Overview
 
-Me alegro mucho de que me acompañes en este camino. Vamos a construir proyectos inmensamente satisfactorios en las próximas semanas. Algunos serán fáciles, otros supondrán un reto, ¡y muchos te ASOMBRARÁN! Los proyectos se basan unos en otros para que desarrolles una experiencia cada vez más profunda cada semana. Una cosa es segura: te divertirás mucho por el camino.
+**LLM Engineering Starter** provides structured code notebooks, interactive laboratory exercises, and standalone agent implementations designed to transition engineers from foundational model calls to advanced autonomous multi-agent pipelines.
 
+### Repository Naming Analysis
+- **Recommended Repository Name**: `llm-engineering-starter`
+- **Naming Formula**: **Formula C** (`[ecosystem/framework]-[sample/starter]`)
+- **Rationale**: Replaces the generic snake_case `llm_engineering` with a descriptive kebab-case name specifying domain/ecosystem (`llm-engineering`) and role as an educational reference starter (`starter`).
 
-### Una nota antes de empezar
+---
 
-Estoy aquí para ayudarte a tener más éxito en tu aprendizaje. Si te encuentras con algún problema, o si tienes alguna idea sobre cómo puedo mejorar el curso, por favor, ponte en contacto conmigo en la plataforma o enviándome un correo electrónico directamente (juangabriel@frogames.es). Siempre es bueno conectar con la gente en LinkedIn para construir la comunidad - me encontrarás aquí:  
-[https://www.linkedin.com/in/juan-gabriel-gomila-salas/
-](https://www.linkedin.com/in/juan-gabriel-gomila-salas/)
+## Features
 
+- **8-Week Progressive Curriculum**:
+  - **Week 1**: Local model inference with Ollama (`llama3.2`), OpenAI API fundamentals, and tokenization.
+  - **Week 2**: Frontier models comparison (OpenAI, Anthropic Claude, Google Gemini) and cost optimization.
+  - **Week 3**: Hugging Face pipelines, tokenizers, open-source model architectures, and Google Colab GPU execution.
+  - **Week 4**: Embeddings, vector spaces, and semantic search.
+  - **Week 5**: Retrieval-Augmented Generation (RAG) pipelines and vector databases (ChromaDB).
+  - **Week 6**: Advanced prompting techniques, structured outputs, and evaluation metrics.
+  - **Week 7**: Fine-tuning open models with custom datasets on GPU instances.
+  - **Week 8**: Full-stack autonomous multi-agent systems with tool use and messaging integrations.
+- **Local & Cloud Flexibility**: Supports completely offline inference via Ollama as well as cloud-hosted frontier LLMs.
+- **Security-First Configuration**: Standardized environment variable resolution ensuring API keys and credentials are never hardcoded.
 
-## Instrucciones de Gratificación Instantánea para la Semana 1, Día 1
+---
 
-¡Comenzaremos el curso instalando Ollama para que puedas ver los resultados de inmediato!
-1. Descarga e instala Ollama desde https://ollama.com
-2. En una PC, inicia un Símbolo del sistema/PowerShell (Presiona Win + R, escribe `cmd` y presiona Enter). En una Mac, inicia una Terminal (Aplicaciones > Utilidades > Terminal).
-3. Ejecuta `ollama run llama3.2` o, para máquinas más pequeñas, prueba `ollama run llama3.2:1b`
-4. Si esto no funciona, es posible que debas ejecutar `ollama serve` en otro PowerShell (Windows) o Terminal (Mac) e intentar el paso 3 nuevamente
-5. Y si eso no funciona en tu equipo, lo he configurado en la nube. Esto está en Google Colab, que necesitará que tengas una cuenta de Google para iniciar sesión, pero es gratis: https://colab.research.google.com/drive/1i5hHBpd424_gNuO0T8AsbLDBR2toRh8K?usp=sharing 
+## Prerequisites
 
-Si tienes algún problema, ¡contacta conmigo!
+- **Python**: `>= 3.10`
+- **Package Manager**: `pip` or `conda`
+- **Jupyter Environment**: JupyterLab or VS Code Jupyter extension
+- **Local Model Runner (Optional)**: [Ollama](https://ollama.com) for running open models locally
 
-## A continuación, instrucciones de configuración
+---
 
-Después de realizar el proyecto rápido de Ollama y de presentarme y presentar el curso, nos ponemos a trabajar con la configuración completa del entorno.
+## Installation and Setup
 
-Espero haber hecho un buen trabajo para que estas guías sean infalibles, pero comuníquese conmigo de inmediato si encuentra obstáculos:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/llm-engineering-starter.git
+cd llm-engineering-starter
+```
 
-- Usuarios de PC, podéis seguir las instrucciones en [SETUP-PC.md](SETUP-PC.md)
-- Usuarios de Mac, podéis seguir las instrucciones en [SETUP-mac.md](SETUP-mac.md)
-- Usuarios de Linux, ¡las instrucciones para Mac deberían ser lo suficientemente precisas!
+### 2. Configure Virtual Environment
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# Linux/macOS:
+source .venv/bin/activate
+```
 
-### Un punto importante sobre los costes de las API
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-Durante el curso, te sugeriré que pruebes los principales modelos a la vanguardia del progreso, conocidos como los modelos Frontier. También te sugeriré que ejecutes modelos de código abierto utilizando Google Colab. Estos servicios tienen algunos cargos, pero mantendré el coste al mínimo, unos pocos céntimos cada vez.
+### 4. Configure Environment Variables
+Copy `.env.example` to `.env` and insert your API credentials:
+```bash
+cp .env.example .env
+```
 
-Por favor, controla el uso de tu API para asegurarte de que estás cómodo con el gasto; he incluido enlaces más abajo. No hay necesidad de gastar más de un par de dólares para todo el curso. Usted puede encontrar que los proveedores de IA como OpenAI requiere un crédito mínimo como \ $ 5 para su región; sólo debemos gastar una fracción de ella, pero usted tendrá un montón de oportunidades para poner a buen uso en sus propios proyectos. Durante la Semana 7 tienes la opción de gastar un poco más si te está gustando el proceso: ¡yo mismo gasto unos 10 $ y los resultados me hacen muy feliz! Pero no es necesario en absoluto; lo importante es que te centres en aprender.
+---
 
-También te mostraré, cuando sea posible, una alternativa si no deseas gastarte nada de dinero en el uso de APIs.
+## Configuration & Environment Variables
 
+| Variable | Provider / Description | Required For |
+| :--- | :--- | :--- |
+| `OPENAI_API_KEY` | OpenAI API access | Weeks 1, 2, 5, 6, 8 |
+| `ANTHROPIC_API_KEY` | Anthropic Claude API access | Weeks 2, 6 |
+| `GOOGLE_API_KEY` | Google AI Studio API access | Week 2 |
+| `HF_TOKEN` | Hugging Face Hub user access token | Weeks 3, 6, 7, 8 |
+| `TWILIO_ACCOUNT_SID` | Twilio account identifier | Week 8 (Messaging Agent) |
+| `TWILIO_AUTH_TOKEN` | Twilio authorization token | Week 8 (Messaging Agent) |
 
-### Cómo está organizado este Repo
+---
 
-Hay carpetas para cada una de las «semanas», que representan módulos de la clase, culminando en una potente solución autónoma de IA Agentica en la Semana 8 que se basa en muchas de las semanas anteriores.    
-Siga las instrucciones de configuración que hay justo en los siguientes apartados, y a continuación, abre la carpeta de la Semana 1 y prepárate para la alegría.
+## Usage
 
+### Quick Start with Ollama (Local)
+1. Install and start Ollama from [ollama.com](https://ollama.com).
+2. Pull the default lightweight model:
+   ```bash
+   ollama run llama3.2
+   ```
 
-### La parte más importante
+### Launching JupyterLab
+```bash
+jupyter lab
+```
+Navigate to `week1/day1.ipynb` to begin the interactive exercises.
 
-El mantra del curso es: la mejor manera de aprender es **HACIENDO**. Debes trabajar conmigo, ejecutando cada celda, inspeccionando los objetos para obtener una comprensión detallada de lo que está sucediendo. Después, modifica el código y hazlo tuyo. Hay jugosos retos para ti a lo largo del curso. Me encantaría que enviaras tu código para que pueda seguir tu progreso, y puedo poner tus soluciones a disposición de los demás para que compartamos tu progreso. Aunque los proyectos son divertidos, están diseñados ante todo para ser _educativos_, enseñándote habilidades empresariales que puedes poner en práctica en tu trabajo.
+### Google Colab GPU Notebooks
+For GPU-intensive modules (Weeks 3 & 7), pre-configured Google Colab notebooks are provided in each respective folder:
+- **Week 3 (Hugging Face Pipelines)**: [Colab Pipeline Notebook](https://colab.research.google.com/drive/1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm?usp=sharing)
+- **Week 7 (Model Fine-Tuning)**: [Colab Fine-Tuning Day 1](https://colab.research.google.com/drive/15rqdMTJwK76icPBxNoqhI7Ww8UM-Y7ni?usp=sharing)
 
+---
 
+## Defensive Security Architecture
 
-## A partir de la Semana 3, también usaremos Google Colab para correr con GPUs.
+- **Credential Isolation**: All vendor tokens and API secrets are loaded strictly via `os.getenv()` from local `.env` files.
+- **Git Hygiene**: Environment files (`.env`), vector database storage directories (`vector_db/`), model weights caches (`model_cache/`), and Jupyter temporary documents (`.virtual_documents/`, `.ipynb_checkpoints/`) are strictly untracked.
+- **Cost Controls**: Recommended usage of cost-efficient models (`gpt-4o-mini`, `claude-3-haiku-20240307`) to prevent unexpected cloud billing spikes.
 
-Usted debe ser capaz de utilizar el nivel gratuito o gasto mínimo para completar todos los proyectos en la clase. Yo personalmente me he suscrito a Colab Pro+ y me encanta, pero no es obligatorio.
+---
 
-Infórmate sobre Google Colab y crea una cuenta de Google (si aún no tienes una) [aquí](https://colab.research.google.com/)
+## License
 
-Los enlaces de los colab están en las carpetas de la semana y también aquí:  
-- Para la semana 3 día 1, este Google Colab muestra lo que [colab puede hacer](https://colab.research.google.com/drive/1DjcrYDZldAXKJ08x1uYIVCtItoLPk1Wr?usp=sharing)
-- Para la semana 3 día 2, aquí está el colab sobre [pipelines API] de HuggingFace(https://colab.research.google.com/drive/1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm?usp=sharing)
-- Para la semana 3 día 3, aquí está el colab sobre [Tokenizers](https://colab.research.google.com/drive/1WD6Y2N7ctQi1X9wa6rpkg8UfyA4iSVuz?usp=sharing)
-- Para la semana 3 día 4, vamos a un colab con HuggingFace [modelos](https://colab.research.google.com/drive/1hhR9Z-yiqjUe7pJjVQw4c74z_V3VchLy?usp=sharing)
-- Para la semana 3 día 5, volvemos al colab para hacer nuestro [Meeting Minutes product](https://colab.research.google.com/drive/1KSMxOCprsl1QRpt_Rq0UqCAyMtPqDQYx?usp=sharing)
-- Para la semana 7, utilizaremos estos libros de Colab: [Día 1](https://colab.research.google.com/drive/15rqdMTJwK76icPBxNoqhI7Ww8UM-Y7ni?usp=sharing) | [Día 2](https://colab.research.google.com/drive/1T72pbfZw32fq-clQEp-p8YQ4_qFKv4TP?usp=sharing) | [Días 3 y 4](https://colab.research.google.com/drive/1csEdaECRtjV_1p9zMkaKKjCpYnltlN3M?usp=sharing) | [Día 5](https://colab.research.google.com/drive/1igA0HF0gvQqbdBD4GkcK3GpHtuDLijYn?usp=sharing)
-
-
-
-
-
-### Seguimiento de los gastos de la API
-
-Puedes mantener tu gasto de API muy bajo a lo largo de este curso; puedes monitorizar el gasto en los dashboards: [aquí](https://platform.openai.com/usage) para OpenAI, [aquí](https://console.anthropic.com/settings/cost) para Anthropic y [aquí](https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/cost) para Google Gemini.
-
-Los gastos de los ejercicios de este curso deberían ser siempre bastante bajos, pero si prefieres que sean mínimos, asegúrate de elegir siempre las versiones más baratas de los modelos:
-1. Para OpenAI: Utiliza siempre el modelo `gpt-4o-mini` en el código en lugar de `gpt-4o`.
-2. Para Anthropic: Utilice siempre el modelo `claude-3-haiku-20240307` en el código en lugar de los otros modelos Claude
-3. Durante la semana 7, estate atento a mis instrucciones para utilizar el conjunto de datos más barato
-
-
-
-## ¡Y eso es todo! ¡Feliz programación y nos vemos en clase!
-
-
-
-<table style="margin: 0; text-align: left;">
-    <tr>
-        <td style="width: 150px; height: 150px; vertical-align: middle;">
-            <img src="resources.jpg" width="150" height="150" style="display: block;" />
-        </td>
-        <td>
-            <h2 style="color:#f71;">Otros recursos adicionales</h2>
-            <span style="color:#f71;">He creado esta página web con recursos útiles para el curso. Incluye enlaces a todas las diapositivas.<br/>
-            <a href="https://cursos.frogamesformacion.com/pages/blog/ingenieria-de-llms-recursos">https://cursos.frogamesformacion.com/pages/blog/ingenieria-de-llms-recursos</a><br/>
-                Mantén este artículo en tus favoritos y continuaré agregando más enlaces útiles allí con el tiempo.
-            </span>
-        </td>
-    </tr>
-</table>
+Proprietary. All rights reserved. Not licensed for redistribution, public sublicensing, or resale.

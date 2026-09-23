@@ -175,3 +175,16 @@ products_vectorstore/
 # ignore gradio private files
 .gradio
 /.gradio
+
+# Jupyter temporary documents & checkpoints
+.virtual_documents/
+.ipynb_checkpoints/
+
+# OS metadata
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment template exception
+!.env.example
+
