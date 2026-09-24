@@ -112,7 +112,3 @@ For GPU-intensive modules (Weeks 3 & 7), pre-configured Google Colab notebooks a
 - **Cost Controls**: Recommended usage of cost-efficient models (`gpt-4o-mini`, `claude-3-haiku-20240307`) to prevent unexpected cloud billing spikes.
 
 ---
-
-## License
-
-Proprietary. All rights reserved. Not licensed for redistribution, public sublicensing, or resale.
